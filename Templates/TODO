@@ -1,0 +1,11 @@
+
+
+ # Agregar metodos que son menos frecuentes usados
+ # emplace_back, sizeof(), upper_bound, lower_bound, etc
+
+ #Agregar algunas aclaraciones de estructuras
+ # Como se recorren los sets, maps, etc
+
+ #Agregar Algoritmo de strong conectivity en grafos
+
+ # x-Agregar combinaciones-x y algo de teoria de matematicas

@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
+char str[MAXN];
 
 
 const int MAXN = 100010;
 const int MOD = 998244353;
-char str[MAXN];
 long long F[MAXN], rF[MAXN], INV[MAXN];
 long long inv(long long a, long long m) {
 	if (a == 1) return 1;
