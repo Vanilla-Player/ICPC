@@ -1,0 +1,12 @@
+
+
+# Ignore directories ending with .dSYM
+**/*.dSYM/
+
+# Ignore all PDF files
+*.pdf
+
+# Ignore all .exe files
+*.exe
+
+[A-Z]
