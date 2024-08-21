@@ -87,7 +87,8 @@
         "concepts": "cpp",
         "numeric": "cpp",
         "filesystem": "cpp",
-        "__memory": "cpp"
+        "__memory": "cpp",
+        "gcd_lcm": "c"
     },
     "C_Cpp.intelliSenseEngineFallback": "enabled"
 }
