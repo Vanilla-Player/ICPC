@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.embeddedhtml": "html",
         "random": "cpp",
         "__locale": "cpp",
         "complex": "cpp",
@@ -88,7 +89,12 @@
         "numeric": "cpp",
         "filesystem": "cpp",
         "__memory": "cpp",
-        "gcd_lcm": "c"
+        "gcd_lcm": "c",
+        "iterator": "cpp",
+        "utility": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "format": "cpp"
     },
     "C_Cpp.intelliSenseEngineFallback": "enabled"
 }
