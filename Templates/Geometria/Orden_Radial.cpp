@@ -19,5 +19,6 @@ struct Cmp { // IMPORTANT: add const in pt operator -
 	}
 };
 
+// Oredena por radio, no necesia caluclar angulos
 // reference is a pt
 sort(points.begin(), points.end(), Cmp(reference));
