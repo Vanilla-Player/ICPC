@@ -94,7 +94,8 @@
         "utility": "cpp",
         "xstring": "cpp",
         "xutility": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "functional": "cpp"
     },
     "C_Cpp.intelliSenseEngineFallback": "enabled"
 }

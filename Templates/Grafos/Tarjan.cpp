@@ -18,7 +18,7 @@ void tarjan(int node){
             tarjan(v);
             low[node] = min(low[node], low[v]); // Veo cual tiene un "ancestro" menor
         }
-        if(stackMember[v]){
+        if(stackMember[v]){ //  means v was visited but can be processed 
             low[node] = min(low[node], ids[v]); // Si el nodo v fue procesado, este puede ser el "ancestro" menor
         }
     }

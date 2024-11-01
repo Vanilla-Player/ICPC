@@ -4,7 +4,7 @@
 **/*.dSYM/
 
 # Ignore all PDF files
-*.pdf
+
 
 # Ignore all .exe files
 *.exe

@@ -17,7 +17,7 @@ queue.size()
 lower_bound(begin(), end(), valor, comp) // comparacion es opcional en donde comp(&1, &2) 1 es el tipo de los elemntos de donde se itera.
                                                                                         // Y 2 es el tipo del valor
 // upper_bound,  busca por el primer elemento del rango que es estrictamente mayor al valor o comparcio, o en caso de no haber. Devuelve el ultimo
-lower_bound(begin(), end(), valor, comp)
+upper_bound(begin(), end(), valor, comp)
 // Calve, 
 //lower_bound te dice dónde empiezan los elementos no menores que el valor, 
 // upper_bound te dice dónde terminan los elementos iguales al valor.
