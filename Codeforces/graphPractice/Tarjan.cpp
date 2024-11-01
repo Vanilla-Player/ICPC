@@ -16,8 +16,8 @@ int id = 0;
 void tarjan(int node){
     id++;
     low[node] = ids[node] = id;
-    in_process.push(id);
-    stackMember[id] = 1;
+    in_process.push(node);
+    stackMember[node] = 1;
     for(auto v: adj[node]){
         if(ids[v] == -1){
             tarjan(v);

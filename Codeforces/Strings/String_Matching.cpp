@@ -73,30 +73,68 @@ vector<int> z(const string &s) {
 #include <bits/stdc++.h>
 using namespace std;
 
-namespace str {
-/** Computes the Pi array of s. */
-vector<int> pi(const string &s) {
+// namespace str {
+// /** Computes the Pi array of s. */
+// vector<int> pi(const string &s) {
+// 	int n = (int)s.size();
+// 	vector<int> pi_s(n);
+// 	for (int i = 1, j = 0; i < n; i++) {
+// 		while (j > 0 && s[j] != s[i]) { j = pi_s[j - 1]; }
+// 		if (s[i] == s[j]) { j++; }
+// 		pi_s[i] = j;
+// 	}
+// 	return pi_s;
+// }
+// }  // namespace str
+// int main() {
+// 	string P, T;
+// 	cin >> T >> P;
+// 	vector<int> Thash = rhash(T,hashPow, hashMod);
+// 	vector<int> Phash = rhash(P,hashPow, hashMod);
+// 	string S = P + '#' + T;
+// 	vector<int> pi = str::pi(S);
+// 	int ans = 0;
+//     int P_size = P.size();
+// 	for (int l : pi) {
+// 		if (l == P_size) { ans++; }
+//         cout << l << " " << endl;
+// 	}
+// 	cout << ans << '\n';
+// }   
+
+const long long hashPow = 911382323, hashMod = 972663749;
+// Se pueden usar otros valores hashmod puede ser hasta 10^18
+vector<long long> rhash(const string &s, const long long P, const long long M) {
 	int n = (int)s.size();
-	vector<int> pi_s(n);
-	for (int i = 1, j = 0; i < n; i++) {
-		while (j > 0 && s[j] != s[i]) { j = pi_s[j - 1]; }
-		if (s[i] == s[j]) { j++; }
-		pi_s[i] = j;
+	vector<long long> rhash_S(n);
+	for (int i = 0; i < n; i++) {
+		if (i != 0) { rhash_S[i] = rhash_S[i - 1] * P % M; }
+		rhash_S[i] = (rhash_S[i] + (long long)s[i]) % M;
 	}
-	return pi_s;
+	return rhash_S;
 }
-}  // namespace str
 
 int main() {
 	string P, T;
-	cin >> T >> P;
-	string S = P + '#' + T;
-	vector<int> pi = str::pi(S);
-	int ans = 0;
-    int P_size = P.size();
-	for (int l : pi) {
-		if (l == P_size) { ans++; }
-        cout << l << " " << endl;
+	cin >> T >> P; 
+	vector<ll> Thash = rhash(T,hashPow, hashMod);
+	vector<ll> Phash = rhash(P,hashPow, hashMod);
+	ll p_size = P.size();
+	ll t_size = T.size();
+	// cout << T << endl;
+	ll ppow = 1;
+	for(int i = 0 ; i < p_size;i++){ppow = (ppow * hashPow)%hashMod;}
+	ll ans = 0;
+	for( ll i = 0; i + p_size - 1 < t_size; i++ ){
+		ll r = Thash[i + p_size - 1];
+		ll l = i == 0? 0 :(Thash[i - 1] * ppow % hashMod);
+		ll curHash = (r - l + hashMod ) % hashMod;
+		if(curHash == Phash.back()){
+			ans++;
+
+		}
+
 	}
 	cout << ans << '\n';
 }   
+
